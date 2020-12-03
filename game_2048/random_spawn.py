@@ -2,7 +2,7 @@ import typing as t
 import random
 
 
-def get_spawn_location(empty_spaces: t.Set[int]) -> int:
+def get_spawn_location(empty_spaces: t.Set):  # todo type hint point
     return random.sample(empty_spaces, 1)[0]
 
 
