@@ -1,4 +1,4 @@
-from game_2048 import GameState, BOARD_HEIGHT, BOARD_WIDTH
+from game_2048.state import *
 
 
 def test_game_state_default():
