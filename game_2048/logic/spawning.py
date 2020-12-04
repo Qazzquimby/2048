@@ -1,18 +1,21 @@
-"""Handles the immutable game state and logic."""
 import typing as t
+import random
 
-import game_2048.models as models
-from game_2048 import random_spawn
+from game_2048 import models as models
 
 
-def empty_board() -> models.Board:
-    return [[0 for _ in range(models.BOARD_WIDTH)] for _ in range(models.BOARD_HEIGHT)]
+def _get_spawn_location(empty_spaces: t.Set[models.Point]) -> models.Point:
+    return random.sample(empty_spaces, 1)[0]
+
+
+def _get_value() -> int:
+    return 2
 
 
 def spawn(
         board: models.Board,
-        get_spawn_location=random_spawn.get_spawn_location,
-        get_value=random_spawn.get_value
+        get_spawn_location=_get_spawn_location,
+        get_value=_get_value
 ) -> models.Board:
     board = board.copy()
 
