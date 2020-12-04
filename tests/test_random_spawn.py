@@ -17,7 +17,7 @@ def test_get_spawn_location_returns_something_in_set():
         assert actual in options
 
 
-def test_get_spawn_location__when_empty__raise_IndexError():
+def test_get_spawn_location__when_empty__raise_index_error():
     options = set()
     with pytest.raises(ValueError):
         spawning._get_spawn_location(options)
